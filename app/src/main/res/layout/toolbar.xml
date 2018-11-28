@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        tools:ignore="UnusedAttribute"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+                android:id="@+id/btnAtras"
+                android:background="@drawable/backbutton_bg_selector"
+                android:textColor="@drawable/backbutton_text_selector"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="@string/back"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"/>
+        <Button
+                android:id="@+id/btnSiguiente"
+                android:background="@drawable/backbutton_bg_selector"
+                android:textColor="@drawable/backbutton_text_selector"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/btnAtras"
+                android:text="@string/next"/>
+
+        <EditText
+                android:id="@+id/edtUrl"
+                android:layout_width="221dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:layout_toEndOf="@+id/btnSiguiente"
+                android:layout_toStartOf="@+id/btnIr"
+                android:inputType="textUri"
+                android:autofillHints=""
+                android:layout_marginStart="11dp"/>
+        <Button
+                android:id="@+id/btnIr"
+                android:background="@drawable/backbutton_bg_selector"
+                android:textColor="@drawable/backbutton_text_selector"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/go"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

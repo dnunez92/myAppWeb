@@ -2,10 +2,15 @@ package com.example.divina.myapplication
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.Menu
 import android.view.MenuItem
+import android.webkit.WebChromeClient
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.Toast
+import kotlinx.android.synthetic.main.toolbar.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -14,14 +19,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        webview.settings.javaScriptEnabled = true
+        webview.settings.setSupportZoom(false)
+        webview.webChromeClient = WebChromeClient()
+        webview.webViewClient =object: WebViewClient() {
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+            }
+        }
+
         // Get the support action bar
-        val actionBar = supportActionBar
+        setSupportActionBar(include_toolbar as Toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         val contenido = this
 
         // Set the action bar title, subtitle and elevation
-        actionBar!!.title = "Kotlin"
-        actionBar.subtitle = "by Divi"
-        actionBar.elevation = 4.0F
+
+
+        supportActionBar?.elevation = 4.0F
 
         btnIr.setOnClickListener {
             webview.loadUrl("https://"+ edtUrl.text.toString())
