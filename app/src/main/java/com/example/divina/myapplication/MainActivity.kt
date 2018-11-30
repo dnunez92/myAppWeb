@@ -1,7 +1,11 @@
 package com.example.divina.myapplication
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.Preference
+import android.preference.PreferenceManager
 import android.support.v7.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.Menu
@@ -9,6 +13,7 @@ import android.view.MenuItem
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.EditText
 import android.widget.Toast
 import kotlinx.android.synthetic.main.toolbar.*
 
@@ -27,6 +32,23 @@ class MainActivity : AppCompatActivity() {
                 super.onPageFinished(view, url)
             }
         }
+
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this.baseContext)
+
+        val mpreferences = preferences.getString("mpreferences", "DEFAULT")
+
+        val text = edtUrl
+        val boton = btnIr
+
+        boton.setOnClickListener {
+            fun onclick (Client: WebViewClient) {
+                PreferenceManager.getDefaultSharedPreferences(this@MainActivity).edit()
+                val editor = preferences.edit()
+                editor.putString("mpreferences", edtUrl.text.toString())
+                editor.commit()
+            }
+        }
+
 
         // Get the support action bar
         setSupportActionBar(include_toolbar as Toolbar)
@@ -84,4 +106,41 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+
+//     override fun onResume() {
+//         var preferencias = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+//         var info_preferencias = preferencias.getString("info_actividad", "Sin informacion");
+//         Toast.makeText(this, info_preferencias, Toast.LENGTH_LONG).show();
+//    }
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,4 +15,9 @@
             android:id="@+id/ajustes"
             android:title="Ajustes"
             app:showAsAction="never"/>
+    <item
+            android:id="@+id/historial"
+            android:title="Historial"
+            app:showAsAction="never"/>
+
 </menu>
