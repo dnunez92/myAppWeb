@@ -32,22 +32,22 @@ class MainActivity : AppCompatActivity() {
                 super.onPageFinished(view, url)
             }
         }
-
-        val preferences = PreferenceManager.getDefaultSharedPreferences(this.baseContext)
-
-        val mpreferences = preferences.getString("mpreferences", "DEFAULT")
+//
+//        val preferences = PreferenceManager.getDefaultSharedPreferences(this.baseContext)
+//
+//        val mpreferences = preferences.getString("mpreferences", "DEFAULT")
 
         val text = edtUrl
         val boton = btnIr
 
-        boton.setOnClickListener {
-            fun onclick (Client: WebViewClient) {
-                PreferenceManager.getDefaultSharedPreferences(this@MainActivity).edit()
-                val editor = preferences.edit()
-                editor.putString("mpreferences", edtUrl.text.toString())
-                editor.commit()
-            }
-        }
+//        boton.setOnClickListener {
+//            fun onclick (Client: WebViewClient) {
+//                PreferenceManager.getDefaultSharedPreferences(this@MainActivity).edit()
+//                val editor = preferences.edit()
+//                editor.putString("mpreferences", edtUrl.text.toString())
+//                editor.commit()
+//            }
+//        }
 
 
         // Get the support action bar

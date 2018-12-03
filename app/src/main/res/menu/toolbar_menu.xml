@@ -15,9 +15,16 @@
             android:id="@+id/ajustes"
             android:title="Ajustes"
             app:showAsAction="never"/>
+
     <item
-            android:id="@+id/historial"
-            android:title="Historial"
-            app:showAsAction="never"/>
+            android:id="@+id/refresh"
+            android:title=""
+            app:showAsAction="always"
+            android:icon="@drawable/ic_history_black_24dp"/>
+    <item
+            android:id="@+id/history"
+            android:title=""
+            app:showAsAction="always"
+            android:icon="@drawable/ic_refresh_black_24dp"/>
 
 </menu>
